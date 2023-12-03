@@ -15,7 +15,7 @@ function Inputs() {
       id: gasto.length + 1,
       perfil: data.perfil,
       descripcion: data.descripcion,
-      cantidad: data.cantidad
+      cantidad: parseInt(data.cantidad, 10)
     }
 
     if(setGasto) setGasto([...gasto, newGasto]);

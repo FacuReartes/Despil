@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Inputs from './components/Inputs';
 import Body from './components/Body';
 import GastoContextProvider from './gastoContext/gastoContextProvider';
+import Total from './components/Total';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Header/>
         <Inputs/>
         <Body/>
+        <Total/>
       </div>
     </GastoContextProvider>
   );
