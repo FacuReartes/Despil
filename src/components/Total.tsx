@@ -16,11 +16,16 @@ function Total() {
     setTotal(newTotal)
   }, [gasto])
 
+  const handlePasos = () => {
+    
+  }
+
   return (
     <div className='pt-4 flex justify-center items-center flex-col'>
       <h1 className='text-3xl text-white pb-4 relative right-36'>
         El gasto total es de ${total}
       </h1>
+      <button onClick={handlePasos}>test</button>
       <ul className='w-[70%] h-60 border-2 border-black rounded-lg bg-[#FFC93C] overflow-auto'>
 
       </ul>

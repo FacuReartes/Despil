@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, ReactNode } from 'react';
-import GastoContext from './gastoContext';
+import PerfilContext from './perfilContext';
 
 interface GastoContextProviderProps {
   children: ReactNode;
@@ -10,12 +10,10 @@ const GastoContextProvider: React.FC<GastoContextProviderProps> = ({ children })
   
   const [gasto, setGasto] = useState<any | null>([]);
 
-  const [perfil, setPerfil] = useState<any | null>([]);
-
   return (
-    <GastoContext.Provider value={{ gasto, setGasto, perfil, setPerfil }}>
+    <PerfilContext.Provider value={{ gasto, setGasto }}>
       {children}
-    </GastoContext.Provider>
+    </PerfilContext.Provider>
   )
 }
 

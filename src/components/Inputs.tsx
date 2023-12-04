@@ -6,7 +6,7 @@ import Body from './Body';
 
 function Inputs() {
   
-  const { gasto, setGasto } = useContext(GastoContext) || { user: null, setUser: () => {} };
+  const { gasto, setGasto, perfil, setPerfil } = useContext(GastoContext) || { user: null, setUser: () => {} };
 
   const { register, handleSubmit, formState: { errors } }  = useForm();
 
@@ -19,6 +19,16 @@ function Inputs() {
     }
 
     if(setGasto) setGasto([...gasto, newGasto]);
+
+    const newPerfil = [...perfil]
+
+    newPerfil.forEach((x:any) => {
+      if(x.nombre === data.perfil) {
+        x.contribucion += parseInt(data.cantidad, 10);
+      }
+    })
+
+    if(setPerfil) setPerfil(newPerfil)
   }
 
   //Falta el manejo de errores del forms
@@ -27,11 +37,12 @@ function Inputs() {
   return (
     <div className='text-white flex justify-center items-center'>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className='text-xl my-8 border-2 border-black flex flex-row'>
+        <div className='w-[35rem] text-xl my-8 border-2 border-black flex flex-row'>
           <select {...register("perfil")}
-            className='min-w-0 basis-2/12 outline-none bg-[#FF9A3C] p-1' placeholder='Facu'>
-            <option>Facu</option>
-            <option>Gio</option>
+            className='min-w-0 basis-3/12 outline-none bg-[#FF9A3C] p-1' placeholder='Facu'>
+            {perfil.map((x:any) => (
+              <option>{x.nombre}</option>
+            ))}
           </select>
           <input {...register("descripcion", {
             required: "Se requiere descripcion",
