@@ -32,6 +32,7 @@ function Inputs() {
   }
 
   //Falta el manejo de errores del forms
+  //deshabilitar poder hacer input con perfil null
 
 
   return (

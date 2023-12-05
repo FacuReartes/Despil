@@ -7,6 +7,9 @@ import GastoContextProvider from './gastoContext/gastoContextProvider';
 import Total from './components/Total';
 import Perfiles from './components/Perfiles';
 
+// Cambiar nombre a gastoContext
+// habilitar el typescript
+
 function App() {
   return (
     <GastoContextProvider>
