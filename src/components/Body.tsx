@@ -1,11 +1,11 @@
 import React from 'react'
 import BodyItem from './BodyItem'
-import GastoContext from '../gastoContext/gastoContext'
+import Context from '../Context/Context'
 import { useContext, useEffect } from 'react';
 
 function Body() {
 
-  const { gasto, setGasto } = useContext(GastoContext) || { user: null, setUser: () => {} };
+  const { gasto, setGasto } = useContext(Context) || { user: null, setUser: () => {} };
 
   return (
     <div className='pt-6 flex justify-center items-center'>

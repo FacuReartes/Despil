@@ -3,16 +3,15 @@ import './App.css';
 import Header from './components/Header';
 import Inputs from './components/Inputs';
 import Body from './components/Body';
-import GastoContextProvider from './gastoContext/gastoContextProvider';
+import ContextProvider from './Context/ContextProvider';
 import Total from './components/Total';
 import Perfiles from './components/Perfiles';
 
-// Cambiar nombre a gastoContext
 // habilitar el typescript
 
 function App() {
   return (
-    <GastoContextProvider>
+    <ContextProvider>
       <div className='bg-[#155263] h-screen w-screen'>
         <Header/>
         <Perfiles/>
@@ -20,7 +19,7 @@ function App() {
         <Body/>
         <Total/>
       </div>
-    </GastoContextProvider>
+    </ContextProvider>
   );
 }
 

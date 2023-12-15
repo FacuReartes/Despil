@@ -1,20 +1,21 @@
 import React from 'react'
 import { useContext } from 'react'
-import GastoContext from '../gastoContext/gastoContext';
+import Context from '../Context/Context';
 import { useForm } from 'react-hook-form'
 import Body from './Body';
 
 function Inputs() {
   
-  const { gasto, setGasto, perfil, setPerfil } = useContext(GastoContext) || { user: null, setUser: () => {} };
+  const { gasto, setGasto, perfil, setPerfil } = useContext(Context) || { user: null, setUser: () => {} };
 
   const { register, handleSubmit, formState: { errors } }  = useForm();
 
   const onSubmit = (data: any) => {
+
     const newGasto = {
       id: gasto.length + 1,
       perfil: data.perfil,
-      descripcion: data.descripcion,
+      descripcion: data.descripcion.charAt(0).toUpperCase() + data.descripcion.slice(1),
       cantidad: parseInt(data.cantidad, 10)
     }
 
@@ -32,14 +33,14 @@ function Inputs() {
   }
 
   //Falta el manejo de errores del forms
-  //deshabilitar poder hacer input con perfil null
-
 
   return (
     <div className='text-white flex justify-center items-center'>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='w-[35rem] text-xl my-8 border-2 border-black flex flex-row'>
-          <select {...register("perfil")}
+          <select {...register("perfil", {
+            required: "Se requiere perfil"
+          })}
             className='min-w-0 basis-3/12 outline-none bg-[#FF9A3C] p-1' placeholder='Facu'>
             {perfil.map((x:any) => (
               <option>{x.nombre}</option>

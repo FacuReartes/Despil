@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState, useContext, useEffect } from 'react'
-import GastoContext from '../gastoContext/gastoContext';
+import Context from '../Context/Context';
 import Paso from './Paso';
 
 function Total() {
 
-  const { gasto, setGasto, perfil, setPerfil } = useContext(GastoContext) || { user: null, setUser: () => {} };
+  const { gasto, setGasto, perfil, setPerfil } = useContext(Context) || { user: null, setUser: () => {} };
   
   const [total, setTotal] = useState(0)
   const [porPersona, setPorPersona] = useState(0)

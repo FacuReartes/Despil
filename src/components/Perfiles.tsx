@@ -3,22 +3,29 @@ import { useForm } from 'react-hook-form'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
-import GastoContext from '../gastoContext/gastoContext';
+import Context from '../Context/Context';
 
 function Perfiles() {
 
-  const { perfil, setPerfil } = useContext(GastoContext) || { user: null, setPerfil: () => {} };
+  const { perfil, setPerfil } = useContext(Context) || { user: null, setPerfil: () => {} };
 
   const { register, handleSubmit, formState: { errors } }  = useForm();
 
   const onSubmit = (data:any) => {
-    const newPerfil = {
-      id: perfil.length + 1,
-      nombre: data.nombre,
-      contribucion: 0
+
+    const a = perfil.find((x:any) => x.nombre == data.nombre)
+    if (!a) {
+      const newPerfil = {
+        id: perfil.length + 1,
+        nombre: data.nombre.charAt(0).toUpperCase() + data.nombre.slice(1),
+        contribucion: 0
+      }
+
+      if(setPerfil) setPerfil([...perfil, newPerfil])
+    } else {
+      console.log("Nombre ya utilizado")
     }
 
-    if(setPerfil) setPerfil([...perfil, newPerfil])
   }
 
   //Ver porque no se centra el texto dentro del input

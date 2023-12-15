@@ -2,11 +2,11 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { useContext } from 'react';
-import GastoContext from '../gastoContext/gastoContext';
+import Context from '../Context/Context';
 
 function BodyItem(props: { perfil: string; cantidad: number; descripcion: string; id: number}) {
   
-  const { gasto, setGasto, perfil, setPerfil } = useContext(GastoContext) || { user: null, setUser: () => {} };
+  const { gasto, setGasto, perfil, setPerfil } = useContext(Context) || { user: null, setUser: () => {} };
 
   const handleDelete = () => {
     const newGasto = gasto.filter((x: any) => x.id !== props.id)
