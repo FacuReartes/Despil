@@ -32,9 +32,9 @@ function Perfiles() {
   //handleErrores
 
   return (
-    <div className='flex justify-center items-center gap-10'>
+    <div className='flex justify-center items-center flex-col sm:flex-row gap-5 py-5 sm:py-0 sm:gap-10'>
       <div>
-        <h1 className='text-white text-3xl py-4'>Agregar Perfil</h1>
+        <h1 className='text-white text-3xl sm:py-4'>Agregar Perfil</h1>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className='p-1 text-white text-xl bg-[#FF9A3C] border-2 border-black'>

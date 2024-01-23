@@ -12,7 +12,7 @@ import Perfiles from './components/Perfiles';
 function App() {
   return (
     <ContextProvider>
-      <div className='bg-[#155263] h-screen w-screen'>
+      <div className='bg-[#155263] min-h-screen w-screen'>
         <Header/>
         <Perfiles/>
         <Inputs/>

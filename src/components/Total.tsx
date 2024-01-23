@@ -64,8 +64,8 @@ function Total() {
   }
 
   return (
-    <div className='pt-4 flex justify-center items-center flex-col'>
-      <div className='flex flex-col items-start w-[70%] px-4'>
+    <div className='pt-4 flex justify-center items-center flex-col sm:mx-0 mx-5 sm:pb-5'>
+      <div className='pb-4 flex flex-col items-start sm:w-[70%] px-4'>
         <h1 className='text-3xl text-white pb-2'>
           El gasto total es de ${total}
         </h1>
@@ -73,7 +73,7 @@ function Total() {
           ${porPersona} por persona
         </h2>
       </div>
-      <ul className='w-[70%] h-60 border-2 border-black rounded-lg bg-[#FFC93C] overflow-auto'>
+      <ul className='sm:w-[70%] w-[100%] h-60 border-2 border-black rounded-lg bg-[#FFC93C] overflow-auto'>
         {pasos.map((x:any) => (
           <li key={x.index - 1}>
             <Paso desde={x.desde.nombre} hacia={x.hacia.nombre} importe={x.importe}/>

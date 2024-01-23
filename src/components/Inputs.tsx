@@ -37,11 +37,11 @@ function Inputs() {
   return (
     <div className='text-white flex justify-center items-center'>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className='w-[35rem] text-xl my-8 border-2 border-black flex flex-row'>
+        <div className='w-[20rem] sm:w-[35rem] text-xl sm:my-8 my-4 sm:border-2 border-black flex flex-row sm:flex-nowrap flex-wrap'>
           <select {...register("perfil", {
             required: "Se requiere perfil"
           })}
-            className='min-w-0 basis-3/12 outline-none bg-[#FF9A3C] p-1' placeholder='Facu'>
+            className='border-2 border-b-0 border-black sm:border-0 min-w-0 basis-4/12 sm:basis-3/12 outline-none bg-[#FF9A3C] p-1' placeholder='Facu'>
             {perfil.map((x:any) => (
               <option>{x.nombre}</option>
             ))}
@@ -54,7 +54,7 @@ function Inputs() {
           }})}
             type="text"
             id="Descripcion"
-            className='outline-none basis-8/12 bg-[#FF9A3C] p-1 border-x-2 border-black' placeholder='Descripcion...'/>
+            className='outline-none basis-8/12 bg-[#FF9A3C] p-1 sm:border-x-2 border-2 sm:border-0 border-black' placeholder='Descripcion...'/>
           <input {...register("cantidad", {
             required: "Se requiere cantidad",
             maxLength: {
@@ -63,7 +63,7 @@ function Inputs() {
           }})}
             type="number"
             id="Cantidad"
-            className='min-w-0 basis-2/12 outline-none bg-[#FF9A3C] p-1' placeholder='$__'/>
+            className='border-2 border-l-0 border-black sm:border-0 min-w-0 basis-3/12 sm:basis-2/12 outline-none bg-[#FF9A3C] p-1' placeholder='$__'/>
         </div>
         <div className='flex justify-end'>
           <button type="submit" className='bg-[#FF9A3C] border-2 border-black hover:border-white px-8 py-2 rounded-lg'>Agregar</button>
