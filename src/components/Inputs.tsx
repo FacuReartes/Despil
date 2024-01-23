@@ -54,7 +54,7 @@ function Inputs() {
           }})}
             type="text"
             id="Descripcion"
-            className='outline-none basis-7/12 sm:basis-8/12 bg-[#FF9A3C] p-1 sm:border-x-2 border-2 sm:border-0 border-black' placeholder='Descripcion...'/>
+            className='outline-none basis-5/12 sm:basis-8/12 bg-[#FF9A3C] p-1 sm:border-x-2 border-2 sm:border-0 border-black' placeholder='Descripcion...'/>
           <input {...register("cantidad", {
             required: "Se requiere cantidad",
             maxLength: {
@@ -63,7 +63,7 @@ function Inputs() {
           }})}
             type="number"
             id="Cantidad"
-            className='border-2 border-l-0 border-black sm:border-0 min-w-0 basis-2/12 sm:basis-2/12 outline-none bg-[#FF9A3C] p-1' placeholder='$__'/>
+            className='border-2 border-l-0 border-black sm:border-0 min-w-0 basis-3/12 sm:basis-2/12 outline-none bg-[#FF9A3C] p-1' placeholder='$__'/>
         </div>
         <div className='flex justify-end'>
           <button type="submit" className='bg-[#FF9A3C] border-2 border-black hover:border-white px-8 py-2 rounded-lg'>Agregar</button>
