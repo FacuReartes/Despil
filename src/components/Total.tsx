@@ -64,7 +64,7 @@ function Total() {
   }
 
   return (
-    <div className='pt-4 flex justify-center items-center flex-col sm:mx-0 mx-5 sm:pb-5'>
+    <div className='pt-4 flex justify-center items-center flex-col sm:mx-0 mx-5 pb-5'>
       <div className='pb-4 flex flex-col items-start sm:w-[70%] px-4'>
         <h1 className='text-3xl text-white pb-2'>
           El gasto total es de ${total}
