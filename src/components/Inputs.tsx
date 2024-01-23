@@ -54,7 +54,7 @@ function Inputs() {
           }})}
             type="text"
             id="Descripcion"
-            className='outline-none basis-5/12 sm:basis-8/12 bg-[#FF9A3C] p-1 sm:border-x-2 border-2 sm:border-0 border-black' placeholder='Descripcion...'/>
+            className='min-w-0 outline-none basis-7/12 sm:basis-8/12 bg-[#FF9A3C] p-1 sm:border-x-2 border-2 sm:border-0 border-black' placeholder='Descripcion...'/>
           <input {...register("cantidad", {
             required: "Se requiere cantidad",
             maxLength: {
